@@ -1,35 +1,38 @@
-Dashboard de Ventas y Rendimiento Operativo - Adidas US (2020-2021)
+# Dashboard de Ventas y Rendimiento Operativo - Adidas US (2020-2021)
 
-Autor: Cerón Facundo Bautista  
-Curso: Herramientas Básicas Para El Analisis de Datos  
-Cohorte: Virginia Marich, Miercoles 18:30  
+## Título y descripción general
+**Análisis de ventas y rendimiento operativo de Adidas US (2020-2021)**
 
+Este proyecto analiza el desempeño comercial de Adidas en Estados Unidos durante el período 2020-2021. A partir de un dataset de más de 9.000 registros, se aplicaron técnicas de limpieza, análisis exploratorio y visualización en Python, culminando en el diseño de un dashboard interactivo en Power BI Desktop.
 
-1. Objetivo del Proyecto
-El objetivo de este proyecto es analizar el desempeño comercial y operativo de Adidas en Estados Unidos durante el período 2020-2021. Mediante el procesamiento de datos en Python y el desarrollo de un dashboard interactivo en Power BI, se busca identificar patrones de ventas, evaluar la rentabilidad por canal de distribución (In-store, Online, Outlet) y medir la eficiencia operativa por región y distribuidor clave para la toma de decisiones estratégicas.
+## Objetivo del proyecto
+* Explorar la evolución mensual y estacional de las ventas.
+* Identificar los canales de venta (*In-store*, *Online*, *Outlet*) y productos más rentables.
+* Analizar diferencias regionales y la eficiencia operativa por distribuidor clave (*retailer*).
 
+## Dataset utilizado
+* **Fuente:** Dataset público [Adidas Enterprise Sales Dataset en Kaggle](https://www.kaggle.com/datasets/heeraldedhia/adidas-enterprise-sales-dataset). Archivo local disponible en [`/DATA/RAW/adidas_us_sales_limpio.csv`](./DATA/RAW/adidas_us_sales_limpio.csv).
+* **Formato:** CSV con 13 variables principales (fecha, región, estado, ciudad, retailer, producto, precio, unidades, ventas totales, margen operativo, método de venta).
+* **Cantidad de registros:** 9.648 filas.
 
-2. Dataset y Fuentes
-*Fuente de datos original:Dataset público de ventas de Adidas en EE. UU. ubicado en la carpeta [`/data/raw/`](./data/raw/adidas_us_sales_limpio.csv).
-*Enlace a la fuente original: [Kaggle - Adidas Enterprise Sales Dataset](https://www.kaggle.com/datasets/heeraldedhia/adidas-enterprise-sales-dataset)
+## Herramientas utilizadas
+* **Python** (pandas, matplotlib, seaborn)
+* **Google Colab**
+* **Power BI**
+* **GitHub**
 
+## Dashboard
+Incluye la vista previa y el proyecto interactivo ejecutable:
+* Captura del tablero: [`/DASHBOARD/dashboard_preview.png`](./DASHBOARD/dashboard_preview.png)
+* Archivo ejecutable de Power BI: [`/DASHBOARD/adidas_sales_dashboard.pbix`](./DASHBOARD/adidas_sales_dashboard.pbix)
 
-3. Metodología y Pasos Realizados
-1. Análisis Exploratorio de Datos (EDA): Limpieza de datos, tratamiento de nulos, estructuración de tipos de datos y análisis preliminar mediante Python en Jupyter Notebook. Consulta el archivo en [`/notebooks/eda_adidas_sales.ipynb`](./notebooks/eda_adidas_sales.ipynb).
-2. Modelado y Métricas DAX: Creación de una tabla dedicada `_medidas` en Power BI Desktop para el cálculo dinámico de KPIs:
-   * Ventas Totales: `Ventas Totales = SUM(adidas_us_sales_limpio[total_sales])`
-   * Ganancia Operativa: `Ganancia Operativa = SUM(adidas_us_sales_limpio[operating_profit])`
-   * Margen Operativo %: `Margen Operativo % = DIVIDE([Ganancia Operativa], [Ventas Totales], 0)`
-3. Diseño Visual e Interactivo: Construcción del reporte interactivo con tarjetas KPI, gráficos estacionales por mes, barras por retailer y distribución por producto. Consulta el archivo en [`/dashboard/adidas_sales_dashboard.pbix`](./dashboard/adidas_sales_dashboard.pbix).
+## Estructura del proyecto
+* `DATA/RAW/` → dataset en formato CSV
+* `NOTEBOOKS/` → cuaderno de análisis exploratorio (EDA) en Python ([`/NOTEBOOKS/eda_adidas_sales.ipynb`](./NOTEBOOKS/eda_adidas_sales.ipynb))
+* `DASHBOARD/` → tablero interactivo en Power BI y capturas de pantalla
 
-
-4. Estructura del Repositorio
-* `/data/raw/`: Contiene el archivo fuente de datos en formato CSV.
-* `/notebooks/`: Cuaderno Jupyter con el análisis exploratorio (EDA) en Python.
-* `/dashboard/`: Archivo ejecutable de Power BI (`.pbix`) y captura de pantalla del reporte (`dashboard_preview.png`).
-* `README.md`: Documentación general del proyecto.
-
-
-5. Referencias y Citas
-Dataset: Dedhia, H. (2022). Adidas Enterprise Sales Dataset. Recuperado de [Kaggle](https://www.kaggle.com/datasets/heeraldedhia/adidas-enterprise-sales-dataset).
-Documentación Power BI: Microsoft. (2024). Instrucciones de DAX en Power BI Desktop. Recuperado de [Microsoft Learn](https://learn.microsoft.com/power-bi/).
+## Licencia y autoría
+© 2026 - Proyecto académico realizado por **Cerón Facundo Bautista**  
+**Curso:** Herramientas Básicas para el Análisis de Datos (UTN.BA)  
+**Cohorte:** Virginia Marich, Miércoles 18:30  
+Licencia: Creative Commons Attribution 4.0 International
